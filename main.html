@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Молекулярный конструктор</title>
+    <link rel="stylesheet" href="test.css">
+</head>
+
+<body>
+<div id="myblock">
+    <script src="node_modules/three/build/three.js"></script>
+    <script src="scene.js"></script>
+
+    <textarea id="textArea" disabled style="width:1920px;text-align: center;font-size:18pt; display: inline-block">
+        Молекула аспирина
+    </textarea>
+</div>
+
+
+<div id="test_menu" style="position:absolute;display:none;background-color:blueviolet">
+    <span color="red">Новая молекула</span>
+    <br>
+
+    <button OnClick="
+    drawMolecule('Aspirin.json');
+    render();
+    test_menu.style.display = 'none';
+    textArea.value = 'Молекула аспирина';
+">
+        Aspirin
+    </button>
+
+    <br>
+
+    <button OnClick="
+   drawMolecule('Acetylene.json');
+   render();
+   test_menu.style.display = 'none';
+   textArea.value = 'Молекула ацетилена';
+">
+        Acetylene
+    </button>
+
+    <br>
+
+    <button OnClick="
+   drawMolecule('Formaldehyde.json');
+   render();
+   test_menu.style.display = 'none';
+   textArea.value = 'Молекула формальдегида';
+">
+        Formaldehyde
+    </button>
+
+    <br>
+
+    <button OnClick="
+    drawMolecule('Nitrogen.json');
+    render();
+    test_menu.style.display = 'none';
+    textArea.value = 'Молекула азота';
+">
+        Nitrogen
+    </button>
+
+    <br>
+
+    <button OnClick="
+    drawMolecule('4-Hydroxyphenylpyruvic-acid.json');
+    render();
+    test_menu.style.display = 'none';
+    textArea.value = 'Молекула 4-Hydroxyphenylpyruvic-acid';
+">
+        4-Hydroxyphenylpyruvic-acid
+    </button>
+</div>
+
+
+<div id="atom_menu" style="position:absolute;display:none;background-color:red">
+    <span color="red">Меню атома</span>
+    <br>
+    <button OnClick="deleteAtom();">
+        delete Atom
+    </button>
+    <br>
+    <button OnClick="addAtom(1);">
+        add H
+    </button>
+    <button OnClick="addAtom(6);">
+        add C
+    </button>
+    <br>
+    <button OnClick="addAtom(7);">
+        add N
+    </button>
+    <button OnClick="addAtom(8);">
+        add O
+    </button>
+    <br>
+    <button OnClick="addAtom(9);">
+        add F
+    </button>
+    <button OnClick="addAtom(15);">
+        add P
+    </button>
+    <br>
+    <button OnClick="addAtom(16);">
+        add S
+    </button>
+    <button OnClick="addAtom(17);">
+        add Cl
+    </button>
+    <br>
+    <button OnClick="addAtom(25);">
+        add Br
+    </button>
+    <button OnClick="addAtom(53);">
+        add I
+    </button>
+</div>
+<div id="bond_menu" style="position:absolute;display:none;background-color:red">
+    <span color="red">Изменить порядок связи</span>
+    <br>
+    <button OnClick="changeBond(1);">
+        make 1-bond
+    </button>
+    <br>
+    <button OnClick="changeBond(2);">
+        make 2-bond
+    </button>
+    <br>
+    <button OnClick="changeBond(3);">
+        make 3-bond
+    </button>
+</div>
+</body>
+
+</html>
